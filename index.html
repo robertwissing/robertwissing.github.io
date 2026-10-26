@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Robert Wissing</title>
+  <meta name="description" content="Robert Wissing, astrophysicist at the Institute of Theoretical Astrophysics, University of Oslo. Numerical magnetohydrodynamics, galactic magnetic fields and SPH methods.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Lora:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="site-title" href="#about">Robert Wissing</a>
+      <nav class="site-nav">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#software">Software</a>
+        <a href="#movies">Movies</a>
+        <a href="#publications">Publications</a>
+        <a href="#slides">Slides</a>
+        <a href="assets/cv/Wissing_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="wrap intro">
+      <img class="portrait" src="assets/img/robert-wissing.jpg" alt="Portrait of Robert Wissing">
+      <div>
+        <h1>Robert Wissing</h1>
+        <p class="position">
+          Postdoctoral Researcher, Institute of Theoretical Astrophysics, University of Oslo
+        </p>
+
+        <p>
+          I am a computational astrophysicist interested in a wide range of topics,
+          including galaxy formation, galactic dynamo processes, accretion discs
+          and planetary impacts, as well as numerical schemes and high-performance
+          computing. I am a developer of the ChaNGa,
+          GASOLINE2 and SPH-EXA codes, and have also developed the
+          <a href="https://github.com/robertwissing/testsuite">AstroPond</a> test
+          suite and the <a href="https://github.com/robertwissing/EOS">Varpoly EOS</a>
+          library.
+        </p>
+        <p>
+          I am currently a postdoctoral researcher at the Institute of Theoretical
+          Astrophysics, University of Oslo, where I am in charge of the work on the
+          <a href="https://github.com/N-BodyShop/changa">ChaNGa</a> code within the
+          <a href="https://www.space-coe.eu/">EuroHPC SPACE Centre of Excellence</a>,
+          making it ready for the coming generation of exascale supercomputers.
+          I received my Ph.D. in 2022 from the University of Oslo, with a thesis on
+          simulating galactic dynamo processes with SPMHD that was awarded the Yara
+          Birkeland Prize 2023. Before that, I received my M.Sc. and B.Sc.
+          in Astrophysics from Lund University, where I developed a new
+          equation of state for planetary interiors and simulated the Moon-forming
+          impact.
+        </p>
+
+        <div class="links">
+          <a href="mailto:robertwi@astro.uio.no">robertwi@astro.uio.no</a>
+          <a href="https://github.com/robertwissing">GitHub</a>
+          <a href="https://scholar.google.com/citations?user=fy9mNJwAAAAJ">Google Scholar</a>
+          <a href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0001-7039-4592&amp;sort=date%20desc">NASA ADS</a>
+          <a href="https://orcid.org/0000-0001-7039-4592">ORCID</a>
+          <a href="https://www.mn.uio.no/astro/english/people/aca/robertwi/">UiO profile</a>
+          <a href="assets/cv/Wissing_CV.pdf" target="_blank" rel="noopener">CV</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="research" class="wrap section">
+      <h2 class="section-title">Research</h2>
+      <p class="lead muted">
+        Here are some selected research topics that I have worked on:
+      </p>
+
+      <section class="topic">
+        <figure>
+          <img src="assets/img/sph-kernel.png" alt="Illustration of an SPH smoothing kernel W(r,h) centred on a particle, with neighbouring particles inside its smoothing length">
+        </figure>
+        <div>
+          <h3>Smoothed particle (magneto)hydrodynamics</h3>
+          <p class="epigraph">&ldquo;or: How I Learned to Stop Worrying and Love the Lagrangian&rdquo; &ndash; Daniel Price</p>
+          <p>
+            SPH is a Lagrangian particle method, where the fluid is represented by
+            interpolation points (particles) that move together with the fluid. This
+            makes the method completely Galilean invariant, gives it excellent
+            conservation properties, makes it naturally adaptive, and well suited
+            to astrophysical problems with a large dynamic range.
+          </p>
+          <p>
+            I first became interested in SPH in my computational astrophysics course
+            at Lund University, where we wrote our own SPH code and simulated a
+            collision between two bodies of around 5000 particles
+            (<a href="https://www.youtube.com/watch?v=eMDWylxP2_4" target="_blank" rel="noopener">old video on YouTube</a>). During my
+            master's, this interest grew as I worked on simulations of the
+            Moon-forming impact and read the work of Daniel Price, Joe Monaghan,
+            James Wadsley and others. In my PhD and postdoctoral research I have
+            been able to keep working with the method, develop it further and gain
+            more insight into it and into numerical schemes in general.
+          </p>
+          <p>
+            In my research I have developed SPMHD and physical viscosity for
+            ChaNGa/Gasoline2, optimised smoothing kernels, a glass
+            initial-condition generator for arbitrary density profiles, general
+            improvements to SPH in ChaNGa/Gasoline2, and most recently a new framework for
+            SPH based on generalised volume partition sums.
+          </p>
+          <p class="muted">
+            <a href="https://arxiv.org/abs/1909.09650">Wissing &amp; Shen 2020</a> ·
+            <a href="https://arxiv.org/abs/2508.08471">Wissing et al. 2026</a> ·
+            <a href="https://github.com/robertwissing/testsuite">AstroPond on GitHub</a>
+          </p>
+          <details class="more">
+            <summary>Show more</summary>
+            <div class="more-body">
+              <figure class="more-gallery">
+                <div class="gallery-row">
+                  <img src="assets/img/mhd-collapse-1.jpg" alt="Magnetised cloud collapse: disc with field lines and outflows, view 1">
+                  <img src="assets/img/mhd-collapse-2.jpg" alt="Magnetised cloud collapse: disc with field lines and outflows, view 2">
+                  <img src="assets/img/mhd-collapse-3.jpg" alt="Magnetised cloud collapse: disc with field lines and a collimated jet">
+                  <img src="assets/img/mhd-collapse-4.jpg" alt="Magnetised cloud collapse: disc and bipolar jet">
+                </div>
+                <figcaption>Collapse of a rotating, magnetised cloud with SPMHD: a disc forms and the wound-up magnetic field (field lines) launches a bipolar jet. <span class="todo">(check caption)</span></figcaption>
+              </figure>
+              <div class="more-figures">
+                <figure class="wide">
+                  <img src="assets/img/collapse-resolution-gdsph-vs-tsph.jpg" alt="Vertical magnetic field in the magnetised cloud collapse at five resolutions, for GDSPH (top row) and traditional SPH (bottom row)" loading="lazy">
+                  <figcaption>Magnetised cloud collapse (&mu; = 10) at jet launching, with 12<sup>3</sup> to 250<sup>3</sup> particles in the cloud: vertical magnetic field in a slice through the rotation axis. GDSPH (top) forms a magnetic tower already at low resolution, traditional SPH (bottom) only at the highest. From Wissing &amp; Shen (2020).</figcaption>
+                </figure>
+                <figure class="wide medium">
+                  <img src="assets/img/kernel-kh.jpg" alt="Kelvin-Helmholtz instability with GDSPH for three kernels and three neighbour numbers" loading="lazy">
+                  <figcaption>Kelvin&ndash;Helmholtz instability with GDSPH (density contrast 2, t = 2) for 32, 64 and 128 neighbours: the optimised kernel (left) against the Wendland C2 and C4 kernels. The optimised kernel behaves like C4 at twice the neighbour number. From Wissing et al. (2026).</figcaption>
+                </figure>
+                <figure class="wide">
+                  <img src="assets/img/partition-blob-test.jpg" alt="Density slices of a dense cloud in a wind at three resolutions for six settings of the volume partition framework" loading="lazy">
+                  <figcaption>Blob test at a density contrast of 1000 after five cloud-crushing times, for 16, 32 and 64 particles across the wind (rows) and six settings of the new framework (columns, from left: C<sub>0.75,0.75</sub>, C<sub>0.75,1</sub>, C<sub>0.5,0.5</sub>, C<sub>0.5,1</sub>, C<sub>0,1</sub> (GDSPH) and C<sub>0,0</sub> (traditional SPH)), where the indices set the weighting of the particle volumes and of the gradients. Traditional SPH leaves the cloud almost intact, while C<sub>0.75,1</sub> disrupts it most strongly. Colours show the logarithm of the density.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section class="topic">
+        <figure>
+          <img src="assets/img/galaxy-dynamo.jpg" alt="Simulated disc galaxy seen at an angle, coloured by magnetic field strength">
+        </figure>
+        <div>
+          <h3>Galactic dynamos</h3>
+          <p>
+            Galaxies host magnetic fields of a few &micro;G, close to equipartition
+            with the thermal and turbulent energy of the gas. This makes them very
+            likely to play a dynamically important role in shaping the interstellar
+            medium and regulating star formation. They also determine how cosmic
+            rays are transported, which are a potential non-thermal driver of
+            galactic outflows.
+          </p>
+          <p>
+            Several mechanisms have been proposed for the origin of magnetic fields
+            in the Universe, including the Biermann battery, shock and ionisation
+            fronts, plasma instabilities, among others. These seed
+            fields are predicted to be very weak, for example the Biermann battery
+            produces fields of around 10<sup>&minus;20</sup>&nbsp;G, which would require exponential
+            growth by more than 14 orders of magnitude to reach the &micro;G fields
+            seen in galaxies today. Turbulent dynamo theory offers a mechanism for
+            this, in which the stretching, twisting and folding of the field lines
+            by turbulent flows gives e-folding times of 10&ndash;100&nbsp;Myr or
+            less.
+          </p>
+          <p>
+            Galactic dynamos are notoriously difficult to model in numerical
+            simulations. A galaxy has a wide array of different turbulence drivers,
+            the growth of the dynamo is tied to the small-scale turbulent structure,
+            and these small-scale structures can in turn affect the growth of the
+            large-scale magnetic field through an inverse cascade. The inclusion of
+            subgrid physics, and how the magnetic field couples to these physics
+            modules, further complicates the situation.
+          </p>
+          <p>
+            During my research I have developed SPMHD to model the galactic
+            dynamo and worked on improving its accuracy. During my PhD I performed
+            a suite of 53 SPMHD simulations of an isolated Milky Way-like galaxy
+            (based on the AGORA isolated disc), looking at the effect of numerical
+            parameters on the galactic dynamo, including resolution, the Jeans floor,
+            stellar feedback and numerical dissipation. In this study we found that
+            the simulations develop a dynamo most consistent with a mean-field dynamo
+            in the spiral-arm region, which saturates at strengths similar to those
+            observed in the Milky Way. Since then, I have further improved the SPMHD
+            method (Wissing et al. 2026, in prep.) and adapted it to comoving
+            coordinates for cosmological simulations (Wissing et al. 2026, in prep.).
+          </p>
+          <p class="muted"><a href="https://arxiv.org/abs/2208.07889">Wissing &amp; Shen 2023</a></p>
+          <details class="more">
+            <summary>Show more</summary>
+            <div class="more-body">
+              <div class="more-figures">
+                <figure>
+                  <img src="assets/img/dynamo-resolution.jpg" alt="Face-on maps of gas density, magnetic field strength and toroidal field at low, medium and high resolution" loading="lazy">
+                  <figcaption>Face-on view after 250 Myr at low, medium and high resolution: gas density (top), magnetic field strength (middle) and toroidal field (bottom). The mean field has a similar scale at all resolutions but grows stronger with resolution.</figcaption>
+                </figure>
+                <figure>
+                  <img src="assets/img/dynamo-brms-growth.jpg" alt="Growth of the rms magnetic field strength over time for several simulations" loading="lazy">
+                  <figcaption>Growth of the rms magnetic field in the medium-resolution runs with feedback, for Jeans floors N<sub>J</sub> = 4, 8, 16 and 30 (darker for higher floors). A higher Jeans floor speeds up the amplification, with saturation at a few microgauss after 1.0&ndash;1.3 Gyr, as long as the collapse length is small enough: with N<sub>J</sub> = 30 the field grows only until about 800 Myr and then slowly decays. From Wissing &amp; Shen (2023).</figcaption>
+                </figure>
+                <figure class="wide">
+                  <img src="assets/img/dynamo-jeans-floor.jpg" alt="Face-on maps of magnetic field strength after 2 Gyr for four Jeans floors at low and medium resolution" loading="lazy">
+                  <figcaption>Magnetic field strength after 2 Gyr in runs with feedback, for Jeans floors N<sub>J</sub> = 4&ndash;30 at low (top) and medium (bottom) resolution. Only the medium-resolution runs amplify the field strongly, and too high a Jeans floor suppresses the dynamo.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section class="topic">
+        <figure>
+          <img src="assets/img/changa-merger.jpg" alt="Gas density in the early stages of a galaxy merger simulated with ChaNGa">
+        </figure>
+        <div>
+          <h3>Simulation codes for exascale computing</h3>
+          <p>
+            There are significant computational challenges in cosmological and
+            galaxy simulations. First, they span a huge range of spatial scales,
+            the distance to the nearest star is about 1&nbsp;pc, a galaxy is of
+            order 10&nbsp;kpc across and the distance between galaxies is about
+            1&nbsp;Mpc. Second, they span a huge range of time scales, from dynamical times
+            below 1&nbsp;Myr in the densest parts of galaxies to the age of the
+            Universe, of order 10&nbsp;Gyr. Third, they involve a lot of
+            interconnected physics acting over different ranges. Gravity is a
+            long-range force, so every particle feels the pull of all the others,
+            while hydrodynamics, cooling and feedback act locally. Dark matter feels
+            only gravity, gas is also subject to hydrodynamics, magnetic fields,
+            cooling and feedback, and stars form from the gas and return energy to
+            it through feedback. Processes below the resolution limit, such as star
+            formation and feedback, have to be included through subgrid models.
+          </p>
+          <p>
+            Many clever algorithms have been developed over the past decades to
+            tackle these challenges, such as tree-based solvers for gravity and SPH
+            neighbour finding, and multi-time-stepping. Another big area of research
+            is how to scale these codes to large supercomputers, like decomposing the
+            domain, balancing the load and keeping communication between processors
+            efficient, which becomes especially hard when matter is strongly
+            clustered and the work is spread over many thousands of cores.
+          </p>
+          <p>
+            In the EuroHPC SPACE Centre of Excellence, I am in charge of the work on
+            the ChaNGa code, a cosmological N-body and SPMHD code built on the Charm++
+            parallel programming framework. Charm++ over-decomposes the problem into
+            many more work objects than there are processors (in ChaNGa, pieces of
+            the tree) and migrates these objects between processors during the run,
+            balancing the load with little intervention from the user. The objects
+            communicate through asynchronous messages, so a processor can keep
+            computing while it waits for data from others, overlapping computation
+            and communication.
+          </p>
+          <p class="muted">
+            <a href="https://github.com/N-BodyShop/changa">ChaNGa on GitHub</a> ·
+            <a href="https://code.it4i.cz/space_coe/changa/-/tree/MHD_tp_replication">SPACE ChaNGa repository</a>
+          </p>
+          <details class="more">
+            <summary>Show more</summary>
+            <div class="more-body">
+              <div class="more-figures">
+                <figure class="narrow">
+                  <img src="assets/img/changa-weak-scaling.png" alt="Parallel efficiency of ChaNGa against the number of threads on six EuroHPC supercomputers" loading="lazy">
+                  <figcaption>Weak scaling of ChaNGa on six EuroHPC supercomputers: the parallel efficiency stays above 80% from 4,096 up to 65,536 threads. From Shukla et al. (2025).</figcaption>
+                </figure>
+              </div>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section class="topic">
+        <figure>
+          <img src="assets/img/mri-turbulence.jpg" alt="Turbulence in a stratified shearing-box simulation of the magnetorotational instability">
+        </figure>
+        <div>
+          <h3>Magnetorotational instability</h3>
+          <p>
+            Accretion discs around young stars and black holes feed gas onto the
+            central object. For the gas to spiral inwards it has to lose angular
+            momentum, so mass accretion requires angular momentum to be transported
+            outwards through the disc. Molecular viscosity is far too weak to do
+            this at the accretion rates we observe. However, if the discs are
+            turbulent, the turbulence boosts the effective viscosity enough to
+            explain the observations. The question then becomes what causes
+            the turbulence within these discs.
+          </p>
+          <p>
+            One such mechanism is the magnetorotational instability (MRI). A weak
+            magnetic field connects gas at different radii like a spring. The inner
+            gas orbits faster and stretches the field, which transfers angular
+            momentum from the inner gas to the outer gas, so the inner gas sinks
+            further in, the outer gas moves further out and the instability runs
+            away, eventually breaking down into turbulence. The turbulence in turn
+            regenerates the magnetic field and the MRI modes, either together with
+            a net field threading the disc or through a dynamo, so that the field
+            and the turbulence sustain each other. Since it only needs an angular velocity that decreases outwards, a
+            weak magnetic field and sufficiently ionised gas, the MRI can operate in
+            most astrophysical discs.
+          </p>
+          <p>
+            At the time of my PhD, the MRI had been studied extensively with grid
+            codes but hardly at all with meshless methods. There was also a worrying
+            result from Deng et al. (2019), who found that SPH simulations of
+            stratified shearing boxes developed runaway growth of the magnetic
+            field. With a large set of shearing-box
+            simulations using the new SPMHD implementation (GDSPH), I showed for the
+            first time that SPH can sustain MRI turbulence in 3D, with saturated
+            magnetic and kinetic energies and stresses consistent with grid codes.
+            We also reproduced the characteristic butterfly diagram of the MRI
+            dynamo for at least 100 orbits, showing that the dynamo remains stable
+            over long timescales. Finally, we showed that the critical
+            numerical Prandtl number for self-sustained turbulence in the
+            zero-net-flux simulations was roughly 2.5, similar to the critical
+            values found with physical dissipation in grid codes.
+          </p>
+          <p class="muted"><a href="https://arxiv.org/abs/2105.01091">Wissing et al. 2022</a></p>
+          <details class="more">
+            <summary>Show more</summary>
+            <div class="more-body">
+              <div class="more-figures">
+                <figure>
+                  <img src="assets/img/mri-3d-gdsph-vs-tsph.jpg" alt="3D renderings of the azimuthal magnetic field in stratified shearing boxes with GDSPH and traditional SPH" loading="lazy">
+                  <figcaption>Stratified net-flux shearing box after about 40 orbits: azimuthal field B<sub>y</sub> with GDSPH (left) and traditional SPH (right). Traditional SPH builds up an excessive azimuthal field in the outer part of the disc. From Wissing et al. (2022).</figcaption>
+                </figure>
+                <figure>
+                  <img src="assets/img/mri-gdsph-vs-tsph-energy.jpg" alt="Magnetic energy versus time in stratified shearing boxes, comparing GDSPH and traditional SPH" loading="lazy">
+                  <figcaption>Magnetic energy in stratified net-flux shearing boxes for four values of the artificial resistivity: GDSPH (blue) saturates, while traditional SPH (red) shows a runaway growth of the field.</figcaption>
+                </figure>
+                <figure>
+                  <img src="assets/img/mri-butterfly.jpg" alt="Butterfly diagram of the horizontally averaged azimuthal magnetic field versus height and time" loading="lazy">
+                  <figcaption>Butterfly diagram from a stratified net-flux shearing box with GDSPH: the horizontally averaged azimuthal field against height and time, reversing sign periodically over 100 orbits.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section class="topic">
+        <figure>
+          <img src="assets/img/giant-impact-5h.jpg" alt="Particle snapshot of a Moon-forming giant impact five hours after the collision, coloured by temperature">
+        </figure>
+        <div>
+          <h3>Planetary interiors and giant impacts</h3>
+          <p>
+            The formation of the terrestrial planets remains an open question, with
+            two suggested scenarios. In the classical Wetherill-type picture,
+            collisions among planetesimals produce planetary embryos with masses
+            between those of the Moon and Mars, which merge through a series of giant impacts over tens of
+            millions of years after the gas disc has dissipated. In the more recent
+            pebble accretion picture, the planets instead grow within the lifetime
+            of the disc by sweeping up pebbles, millimetres to centimetres in size,
+            drifting inwards from the outer disc.
+          </p>
+          <p>
+            Nevertheless, both assembly histories need to account for a giant impact
+            during the late stages of planet formation to explain the formation of
+            the Moon. The lunar-forming impact is believed to have occurred between
+            a Mars-sized body named Theia and the young Earth. This is our current
+            best model for the formation of the Moon, as it explains most of the observations of the
+            Earth&ndash;Moon system, which include the large size of the Moon
+            relative to the Earth, its small iron core, the high angular momentum
+            of the system and the lack of volatile elements in the Moon. However,
+            the almost identical isotopic compositions of the Earth and the Moon
+            remain a challenge and have led to several variants of the impact
+            scenario.
+          </p>
+          <p>
+            In my master's, I built a new analytical equation of state for planetary
+            material that is as cheap to evaluate as the commonly used Tillotson
+            equation of state but, unlike it, has a proper vapour transition and
+            behaves correctly at high pressures. I tested it against experimental
+            data and the interior structure of the Earth, and applied it to
+            simulations of the Moon-forming impact. I have recently added the
+            Varpoly EOS to the Gasoline2 code, and some of my master's students
+            have used it for planetary impacts in their thesis work.
+          </p>
+          <p class="muted">
+            <a href="https://doi.org/10.1051/0004-6361/201935814">Wissing &amp; Hobbs 2020a</a> ·
+            <a href="https://doi.org/10.1051/0004-6361/201936227">Wissing &amp; Hobbs 2020b</a> ·
+            <a href="https://github.com/robertwissing/EOS">Varpoly EOS on GitHub</a>
+          </p>
+          <details class="more">
+            <summary>Show more</summary>
+            <div class="more-body">
+              <div class="more-figures">
+                <figure>
+                  <img src="assets/img/eos-forsterite.jpg" alt="Shock Hugoniot of forsterite comparing several equations of state with experimental data" loading="lazy">
+                  <figcaption>Shock Hugoniot of forsterite: my fits to olivine data and to the Hugoniot, compared with ANEOS, the Tillotson equation of state and experimental data.</figcaption>
+                </figure>
+                <figure>
+                  <img src="assets/img/eos-vapour-quartz.jpg" alt="Vapour curve of quartz comparing the new equation of state with ANEOS and experimental data" loading="lazy">
+                  <figcaption>Vapour curve of quartz: my two fits compared with ANEOS (with and without molecules) and experimental data. The vapour curves fit the experimental entropy data well and resemble ANEOS with molecular gas.</figcaption>
+                </figure>
+                <figure>
+                  <img src="assets/img/eos2-canonical-composition.jpg" alt="Particles of iron, proto-Earth silicates and impactor silicates 24 hours after a canonical Moon-forming impact" loading="lazy">
+                  <figcaption>Canonical impact 24 hours after the collision: iron (white), proto-Earth silicates (green) and Theia silicates (red). The disc and the stream of material around the planet are dominated by Theia material, and the disc could form a satellite of about 1.2 lunar masses. From Wissing &amp; Hobbs (2020b).</figcaption>
+                </figure>
+                <figure>
+                  <img src="assets/img/eos2-fastspin-composition.jpg" alt="Particles of iron, proto-Earth silicates and impactor silicates 24 hours after a fast-spinning Moon-forming impact" loading="lazy">
+                  <figcaption>Fast-spinning impact 24 hours after the collision: proto-Earth and Theia material are evenly mixed around the planet, but the disc holds too little mass and angular momentum, giving a satellite of only 0.13 lunar masses. From Wissing &amp; Hobbs (2020b).</figcaption>
+                </figure>
+              </div>
+            </div>
+          </details>
+        </div>
+      </section>
+    </section>
+
+    <section id="software" class="wrap section">
+      <h2 class="section-title">Software</h2>
+      <p class="lead muted">Codes I write and contribute to.</p>
+
+      <h3>My codes</h3>
+      <div class="code-grid">
+        <article class="code-card code-card-wide">
+          <h4><a href="https://github.com/robertwissing/testsuite">AstroPond</a></h4>
+          <p class="code-role">Author · Python / Bash</p>
+          <p>
+            AstroPond originated as my test suite for ChaNGa and Gasoline2, with scripts
+            for generating initial conditions, manipulating snapshots, interpolation,
+            analysis and code conversion. As part of the
+            <a href="https://www.space-coe.eu/">SPACE CoE</a>, I have recently started to
+            generalise it, expanding the number of codes that can use it and adding a
+            unified analysis interface and regression testing for CI/CD.
+          </p>
+          <p>
+            It is now a large, code-agnostic test suite for hydrodynamics and
+            magnetohydrodynamics codes. It generates initial conditions (lattice, random or relaxed glass, for
+            a wide range of density profiles), runs the same problem across many codes,
+            and checks the result against analytic or high-resolution reference solutions.
+          </p>
+          <ul class="code-features">
+            <li><strong>About 30 standard tests</strong>, covering hydro (Kelvin–Helmholtz, Sedov, Gresho vortex, Evrard collapse, Rayleigh–Taylor, cloud crushing), MHD (Orszag–Tang, MHD rotor, field-loop advection, Alfvén waves, magnetised cloud collapse, MRI) and cosmology (Zel'dovich pancake, cosmological MHD waves)</li>
+            <li><strong>Runs on ten codes:</strong> Gasoline, ChaNGa, SPH-EXA, GIZMO, Phantom, AREPO, RAMSES, Athena++, PKDGRAV3 and OpenGadget3</li>
+            <li><strong>One analysis interface</strong> for every test, with error metrics, convergence plots, field maps and movies</li>
+            <li><strong>Regression testing:</strong> you can lock in a reference result and gate a code's continuous integration on it (worked example for ChaNGa)</li>
+            <li><strong>Tools</strong> for splitting and merging particles, interpolating snapshots onto uniform, AMR or Voronoi grids, and converting between code formats</li>
+          </ul>
+          <p class="pub-links"><a href="https://github.com/robertwissing/testsuite">GitHub</a><a href="https://arxiv.org/abs/2508.08471">Kernels paper (Wissing et al. 2026)</a></p>
+        </article>
+        <article class="code-card code-card-wide">
+          <h4><a href="https://github.com/robertwissing/EOS">Varpoly EOS</a></h4>
+          <p class="code-role">Author · Python</p>
+          <p>An analytical equation of state for giant-impact and planetary-interior simulations, as cheap to evaluate as Tillotson. Unlike Tillotson, it has a proper vapour transition (avoiding erroneous decompression velocities) and extrapolates correctly to high pressures with a physically consistent Grüneisen parameter.</p>
+          <p class="pub-links"><a href="https://github.com/robertwissing/EOS">GitHub</a><a href="https://ascl.net/2012.007">ASCL</a><a href="https://doi.org/10.1051/0004-6361/201935814">Paper</a></p>
+        </article>
+      </div>
+
+      <h3>Codes I develop and contribute to</h3>
+      <div class="code-grid">
+        <article class="code-card">
+          <!-- <img class="code-thumb" src="assets/img/changa-merger.jpg" alt="ChaNGa simulation of two interacting spiral galaxies"> -->
+          <h4><a href="https://github.com/N-BodyShop/changa">ChaNGa</a></h4>
+          <p class="code-role">Developer · C++ / Charm++</p>
+          <p>N-body and SPH code for cosmological and galaxy simulations, based on Gasoline2 and PKDGRAV but using the Charm++ runtime system for drastically improved parallelisation. Within EuroHPC SPACE, I am in charge of the work on ChaNGa, preparing it for the coming generation of exascale supercomputers. I have also implemented in ChaNGa the same modules as listed under Gasoline2.</p>
+          <p class="pub-links"><a href="https://github.com/N-BodyShop/changa">GitHub</a><a href="https://arxiv.org/abs/1409.1929">Code paper (Menon et al. 2015)</a><a href="assets/slides/changa-tutorial.pdf" target="_blank" rel="noopener">Tutorial (PDF)</a></p>
+        </article>
+        <article class="code-card">
+          <h4><a href="https://github.com/N-BodyShop/gasoline">GASOLINE2</a></h4>
+          <p class="code-role">Developer · C</p>
+          <p>N-body and SPH code for cosmological and galaxy simulations. I have implemented several new SPH improvements to Gasoline2, which include linear corrected gradients, optimised smoothing kernels (<a href="https://arxiv.org/abs/2508.08471">Wissing et al. 2026</a>), generalised volume partitioning and a reconstruction scheme for dissipation. I have also implemented the SPMHD module (<a href="https://arxiv.org/abs/1909.09650">Wissing &amp; Shen 2020</a>) and physical viscosity module (<a href="https://arxiv.org/abs/2512.10893">Derdzinski et al. 2025</a>) and helped with the implementation of magnetic field-aligned diffusion (<a href="https://arxiv.org/abs/2604.21983">Owens et al. 2026</a>).</p>
+          <p class="pub-links"><a href="https://github.com/N-BodyShop/gasoline">GitHub</a><a href="https://ui.adsabs.harvard.edu/search/q=title%3A%22Gasoline2%22">Code paper (Wadsley et al. 2017)</a></p>
+        </article>
+        <article class="code-card">
+          <h4><a href="https://github.com/sphexa-org/sphexa">SPH-EXA</a></h4>
+          <p class="code-role">Contributor · C++</p>
+          <p>Natively GPU-accelerated SPH code with self-gravity, designed for exascale supercomputers. Its SPH implementation is based on SPHYNX, ChaNGa and SPH-flow. I have helped with the implementation of SPMHD and added a physical viscosity module.</p>
+          <p class="pub-links"><a href="https://github.com/sphexa-org/sphexa">GitHub</a><a href="https://arxiv.org/abs/2005.02656">Code paper (Cavelan et al. 2020)</a><a href="https://arxiv.org/abs/2307.06345">Code paper (Keller et al. 2023)</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="movies" class="wrap section">
+      <h2 class="section-title">Movies</h2>
+      <p class="lead muted">Animations from my simulations.</p>
+
+      <!--
+        To add a movie, replace a placeholder <div class="movie-frame ..."> with one of:
+          Local file (put it in assets/movies/):
+            <video class="movie-frame" src="assets/movies/dynamo.mp4" poster="assets/movies/dynamo.jpg" controls muted loop playsinline></video>
+          YouTube:
+            <iframe class="movie-frame" src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="Galactic dynamo" allowfullscreen></iframe>
+          Vimeo:
+            <iframe class="movie-frame" src="https://player.vimeo.com/video/VIDEO_ID" title="Galactic dynamo" allowfullscreen></iframe>
+      -->
+      <div class="movie-grid">
+        <figure class="movie">
+          <video class="movie-frame" src="assets/movies/galactic-dynamo.mp4" poster="assets/movies/galactic-dynamo.jpg" controls muted loop playsinline preload="none"></video>
+          <figcaption><strong>Magnetic field growth in a spiral galaxy</strong><br>Magnetic field strength in a face-on disc galaxy as the dynamo amplifies the field, from <a href="https://arxiv.org/abs/2208.07889">Wissing &amp; Shen (2023)</a>.</figcaption>
+        </figure>
+        <figure class="movie">
+          <video class="movie-frame" src="assets/movies/mri-stratified.mp4" poster="assets/movies/mri-stratified.jpg" controls muted loop playsinline preload="none"></video>
+          <figcaption><strong>MRI turbulence in a shearing box</strong><br>Magnetic field structure in a stratified shearing box simulated with SPMHD.</figcaption>
+        </figure>
+        <figure class="movie">
+          <video class="movie-frame" src="assets/movies/galaxy-disc.mp4" poster="assets/movies/galaxy-disc.jpg" controls muted loop playsinline preload="none"></video>
+          <figcaption><strong>Magnetic field growth in a Milky Way-like galaxy</strong><br>The magnetic field strength growing over time in a Milky Way-like galaxy, from <a href="https://arxiv.org/abs/2208.07889">Wissing &amp; Shen (2023)</a>.</figcaption>
+        </figure>
+        <figure class="movie">
+          <video class="movie-frame" src="assets/movies/giant-impact.mp4" poster="assets/movies/giant-impact.jpg" controls muted loop playsinline preload="none"></video>
+          <figcaption><strong>The Moon-forming impact</strong><br>A giant impact between proto-Earth and a Mars-sized body (Theia). Simulations done with the VINE code and my Varpoly EOS.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="publications" class="wrap section">
+      <h2 class="section-title">Publications</h2>
+      <p class="muted">
+        A full and up-to-date list is on
+        <a href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0001-7039-4592&amp;sort=date%20desc">NASA ADS</a>,
+        <a href="https://orcid.org/0000-0001-7039-4592">ORCID</a> and
+        <a href="https://scholar.google.com/citations?user=fy9mNJwAAAAJ">Google Scholar</a>.
+      </p>
+
+      <!-- PUBLICATIONS:START (generated by scripts/publications/update_publications.py; edit entries.json instead) -->
+      <h3>First-author papers</h3>
+      <ul class="pub-list">
+        <li>
+          <span class="pub-title">Improved volume partition for smoothed particle hydrodynamics</span>
+          <span class="pub-authors"><span class="me">R. Wissing</span>, J. Wadsley</span>
+          <span class="pub-venue">Submitted to A&amp;A</span>
+        </li>
+        <li>
+          <span class="pub-title">Optimized smoothing kernels for smoothed particle hydrodynamics</span>
+          <span class="pub-authors"><span class="me">R. Wissing</span>, T. Quinn, B. Keller, J. Wadsley, S. Shen</span>
+          <span class="pub-venue">A&amp;A 706, A73 (2026)</span>
+          <span class="pub-links"><a href="https://arxiv.org/abs/2508.08471">arXiv</a><a href="https://doi.org/10.1051/0004-6361/202556909">DOI</a><a href="https://github.com/robertwissing/testsuite">Code</a></span>
+          <details class="abstract">
+            <summary>Abstract</summary>
+            <p>We present a set of new smoothing kernels for smoothed particle hydrodynamics (SPH) that improve the convergence of the method without any additional computational cost. These kernels are generated through a linear combination of other SPH kernels combined with an optimization strategy to minimize the error in the Gresho-Chan vortex test case. To facilitate the different choices in gradient operators for SPH in the literature, we performed this optimization for both geometric density average force SPH (GDSPH) and linear-corrected gradient SPH (ISPH). In addition to the Gresho-Chan vortex, we also performed simulations of the hydrostatic glass, Kelvin-Helmholtz instability, Sod shocktube case, and Evrard collapse as well as a subsonic blob test. At low neighbor numbers (&lt;128), there is a significant improvement across the different tests, with the greatest impact shown for GDSPH. Apart from the popular Wendland kernels, we also explored other positive-definite kernels in this paper, which include the "missing" Wendland kernels, Wu kernels, and the Buhmann kernel. In addition, we also present a method for producing arbitrary non-biased initial conditions in SPH. This method uses the SPH momentum equation together with an artificial pressure combined with a global and local relaxation stage to minimize local and global errors.</p>
+          </details>
+        </li>
+        <li>
+          <span class="pub-title">Numerical dependencies of the galactic dynamo in isolated galaxies with SPH</span>
+          <span class="pub-authors"><span class="me">R. Wissing</span>, S. Shen</span>
+          <span class="pub-venue">A&amp;A 673, A47 (2023)</span>
+          <span class="pub-links"><a href="https://arxiv.org/abs/2208.07889">arXiv</a><a href="https://doi.org/10.1051/0004-6361/202244753">DOI</a></span>
+          <details class="abstract">
+            <summary>Abstract</summary>
+            <p>Simulating and evolving magnetic fields within global galaxy simulations provides a large tangled web of numerical complexity due to the vast amount of physical processes involved. Understanding the numerical dependencies that act on the galactic dynamo is a crucial step in determining what resolution and conditions are required to properly capture the magnetic fields observed in galaxies. Here, we present an extensive study on the numerical dependencies of the galactic dynamo in isolated spiral galaxies using smoothed particle magnetohydrodynamics. We performed 53 isolated spiral galaxy simulations with different initial setups, feedback, resolution, Jeans floor, and dissipation parameters. The results show a strong mean-field dynamo occurring in the spiral-arm region of the disk, likely produced by the classical alpha-omega dynamo or the recently described gravitational instability dynamo. The inclusion of feedback is seen to work in both a destructive and positive fashion for the amplification process. Destructive interference for the amplification occurs due to the breakdown of filament structure in the disk, the increase of turbulent diffusion, and the ejection of magnetic flux from the central plane to the circumgalactic medium. The positive effect of feedback is the increase in vertical motions and the turbulent fountain flows that develop, showing a high dependence on the small-scale vertical structure and the numerical dissipation within the galaxy. Galaxies with an effective dynamo saturate their magnetic energy density at levels between 10 and 30% of the thermal energy density. The density-averaged numerical Prandtl number is found to be below unity throughout the galaxy for all our simulations, with an increasing value with radius. Assuming a turbulent injection length of 1 kpc, the numerical magnetic Reynolds number is within the range of Re<sub>mag</sub> = 10 ‒ 400, indicating that some regions are below the levels required for the small-scale dynamo (Re<sub>mag, crit</sub> = 30 ‒ 2700) to be active.</p>
+          </details>
+        </li>
+        <li>
+          <span class="pub-title">Magnetorotational instability with smoothed particle hydrodynamics</span>
+          <span class="pub-authors"><span class="me">R. Wissing</span>, S. Shen, J. Wadsley, T. Quinn</span>
+          <span class="pub-venue">A&amp;A 659, A91 (2022)</span>
+          <span class="pub-links"><a href="https://arxiv.org/abs/2105.01091">arXiv</a><a href="https://doi.org/10.1051/0004-6361/202141206">DOI</a></span>
+          <details class="abstract">
+            <summary>Abstract</summary>
+            <p>The magnetorotational instability (MRI) is an important process in driving turbulence in sufficiently ionized accretion disks. It has been extensively studied using simulations with Eulerian grid codes, but remains fairly unexplored for meshless codes. Here, we present a thorough numerical study on the MRI using the smoothed particle magnetohydrodynamics method with the geometric density average force expression. We performed 37 shearing box simulations with different initial setups and a wide range of resolution and dissipation parameters. We show, for the first time, that MRI with sustained turbulence can be simulated successfully with smoothed-particle hydrodynamics (SPH), with results consistent with prior work with grid-based codes, including saturation properties such as magnetic and kinetic energies and their respective stresses. In particular, for the stratified boxes, our simulations reproduce the characteristic "butterfly" diagram of the MRI dynamo with saturated turbulence for at least 100 orbits. On the contrary, traditional SPH simulations suffer from runaway growth and develop unphysically large azimuthal fields, similar to the results from a recent study with meshless methods. We investigated the dependency of MRI turbulence on the numerical Prandtl number (P<sub>m</sub>) in SPH, focusing on the unstratified, zero net-flux case. We found that turbulence can only be sustained with a Prandtl number larger than ∼2.5, similar to the critical values for the physical Prandtl number found in grid-code simulations. However, unlike grid-based codes, the numerical Prandtl number in SPH increases with resolution, and for a fixed Prandtl number, the resulting magnetic energy and stresses are independent of resolution. Mean-field analyses were performed on all simulations, and the resulting transport coefficients indicate no α-effect in the unstratified cases, but an active αω dynamo and a diamagnetic pumping effect in the stratified medium, which are generally in agreement with previous studies. There is no clear indication of a shear-current dynamo in our simulation, which is likely to be responsible for a weaker mean-field growth in the tall, unstratified, zero net-flux simulation.</p>
+          </details>
+        </li>
+        <li>
+          <span class="pub-title">A new equation of state applied to planetary impacts. II. Lunar-forming impact simulations with a primordial magma ocean</span>
+          <span class="pub-authors"><span class="me">R. Wissing</span>, D. Hobbs</span>
+          <span class="pub-venue">A&amp;A 643, A40 (2020)</span>
+          <span class="pub-links"><a href="https://doi.org/10.1051/0004-6361/201936227">DOI</a><a href="https://ui.adsabs.harvard.edu/abs/2020A&amp;A...643A..40W">ADS</a></span>
+          <details class="abstract">
+            <summary>Abstract</summary>
+            <p>Observed FeO/MgO ratios in the Moon and Earth are inconsistent with simulations done with a single homogeneous silicate layer. In this paper we use a newly developed equation of state to perform smoothed particle hydrodynamics simulations on the lunar-forming impact, testing the effect of a primordial magma ocean on Earth. This is investigated using the impact parameters of both the canonical case, in which a Mars-sized impactor hits a non-rotating Earth at an oblate angle, and the fast-rotating case, in which a half-sized Mars impactor hits a fast-spinning Earth head-on. We find that the inclusion of a magma ocean results in a less massive Moon and leads to slightly more mixing. Additionally, we test how an icy Theia would affect the results and find that this reduces the probability of a successful Moon formation. Simulations of the fast-spinning case are found to be unable to form a massive-enough Moon.</p>
+          </details>
+        </li>
+        <li>
+          <span class="pub-title">Smoothed particle magnetohydrodynamics with the geometric density average force expression</span>
+          <span class="pub-authors"><span class="me">R. Wissing</span>, S. Shen</span>
+          <span class="pub-venue">A&amp;A 638, A140 (2020)</span>
+          <span class="pub-links"><a href="https://arxiv.org/abs/1909.09650">arXiv</a><a href="https://doi.org/10.1051/0004-6361/201936739">DOI</a></span>
+          <details class="abstract">
+            <summary>Abstract</summary>
+            <p>We present a novel method of magnetohydrodynamics (MHD) within the smoothed particle hydrodynamics scheme (SPMHD) using the geometric density average force expression. Geometric density average within smoothed particle hydrodynamics (GDSPH) has recently been shown to reduce the leading order errors and greatly improve the accuracy near density discontinuities, eliminating surface tension effects. Here, we extend the study to investigate how SPMHD benefits from this method. We implement ideal MHD in the GASOLINE2 and CHANGA codes with both GDSPH and traditional smoothed particle hydrodynamics (TSPH) schemes. A constrained hyperbolic divergence cleaning scheme was employed to control the divergence error and a switch for artificial resistivity with minimized dissipation was also used. We tested the codes with a large suite of MHD tests and showed that in all problems, the results are comparable or improved over previous SPMHD implementations. While both GDSPH and TSPH perform well with relatively smooth or highly supersonic flows, GDSPH shows significant improvements in the presence of strong discontinuities and large dynamic scales. In particular, when applied to the astrophysical problem of the collapse of a magnetized cloud, GDSPH realistically captures the development of a magnetic tower and jet launching in the weak-field regime, while exhibiting fast convergence with resolution, whereas TSPH failed to do so. Our new method shows qualitatively similar results to those of the meshless finite mass/volume schemes within the GIZMO code, while remaining computationally less expensive.</p>
+          </details>
+        </li>
+        <li>
+          <span class="pub-title">A new equation of state applied to planetary impacts. I. Models of planetary interiors</span>
+          <span class="pub-authors"><span class="me">R. Wissing</span>, D. Hobbs</span>
+          <span class="pub-venue">A&amp;A 635, A21 (2020)</span>
+          <span class="pub-links"><a href="https://doi.org/10.1051/0004-6361/201935814">DOI</a><a href="https://github.com/robertwissing/EOS">Code</a></span>
+          <details class="abstract">
+            <summary>Abstract</summary>
+            <p>We present a new analytical equation of state (EOS), which correctly models high pressure theory and fits well to the experimental data of ∊-Fe, SiO<sub>2</sub>, Mg<sub>2</sub>SiO<sub>4</sub>, and the Earth. The cold part of the EOS is modeled after the Varpoly EOS. The thermal part is based on a new formalism of the Gruneisen parameter, which improves behavior from earlier models and bridges the gap between elasticity and thermoelasticity. The EOS includes an expanded state model, which allows for the accurate modeling of material vapor curves. The EOS is compared to both the Tillotson EOS and ANEOS model, which are both widely used in planetary impact simulations. The complexity and cost of the EOS is similar to that of the Tillotson EOS, while showing improved behavior in every aspect. The Hugoniot state of shocked silicate material is captured relatively well and our model reproduces vapor curves similar to that of the ANEOS model. To test its viability in hydrodynamical simulations, the EOS was applied to the lunar-forming impact scenario and the results are presented in Paper II and show good agreement with previous work. &lt;P /&gt;The code used to make the analysis can be downloaded at &lt;A href="https://github.com/robertwissing/EOS"&gt;https://github.com/robertwissing/EOS&lt;/A&gt;.</p>
+          </details>
+        </li>
+      </ul>
+
+      <h3>Co-authored papers</h3>
+      <ul class="pub-list">
+        <li>
+          <span class="pub-title">A multi-scale view of molecular gas and magnetic fields in the Antennae galaxies</span>
+          <span class="pub-authors">A. Lasrado et al. (incl. <span class="me">R. Wissing</span>)</span>
+          <span class="pub-venue">Submitted to A&amp;A (2026)</span>
+          <span class="pub-links"><a href="https://arxiv.org/abs/2610.03346">arXiv</a><a href="https://doi.org/10.48550/arXiv.2610.03346">DOI</a></span>
+          <span class="pub-contrib"><em>My contribution:</em> Discussion and revision of the manuscript.</span>
+          <details class="abstract">
+            <summary>Abstract</summary>
+            <p>Major mergers are transformative events in galaxy evolution, dynamically reshaping the stellar and gas makeup of the hosts, as well as the galaxy-scale magnetic fields (B-fields) that permeate their interstellar medium (ISM), altering both B-field strength and configuration. In this work, we study in detail the link between the co-evolving gas and B-fields in the cold ISM phase of the nearby Antennae galaxy merger (NGC 4038/4039), using CO(3-2) data from the LAsMA receiver at the APEX telescope and ALMA, together with archival 154 $μ$m dust polarization data from the SOFIA/HAWC+. We characterize trends between measurements of molecular gas intensity and velocity dispersion with polarization measurements at kpc-scales with the APEX and SOFIA data. We find anti-correlations with CO intensity ($ρ\lesssim-0.6$) and CO velocity dispersion ($ρ\lesssim-0.4$), which are signposts of geometric depolarization. Since dust polarization measurements are a density-weighted line-of-sight integrated average of B-field vectors below the beam size, the ALMA data can serve as a proxy of density structures below the SOFIA beam on a channel-by-channel basis. Through a geometric analysis of structures in the ALMA channels, we identify salient kinematic features in the overlap region strongly aligned with the SOFIA-inferred B-field orientation. This indicates that these kinematic features might dominantly lend their orientation to the measured field direction, assuming a correspondence between molecular gas structures and galactic B-fields, owing to their density or high polarization fraction. We also identify a modest trend ($ρ\sim0.5$) between the coherence of the molecular gas, a proxy of the line-of-sight angular dispersion, at small scales, and the SOFIA polarization fraction, showing that the polarization fraction measured at $\sim2$ kpc scales is sensitive to structures at $\sim50$ pc scales.</p>
+          </details>
+        </li>
+        <li>
+          <span class="pub-title">Fast, Stable, and Physical: Hyperbolic, Magnetic Field-Aligned Diffusion in SPH</span>
+          <span class="pub-authors">N. Owens, J. Wadsley, <span class="me">R. Wissing</span>, B. Keller</span>
+          <span class="pub-venue">Preprint (2026)</span>
+          <span class="pub-links"><a href="https://arxiv.org/abs/2604.21983">arXiv</a><a href="https://doi.org/10.48550/arXiv.2604.21983">DOI</a></span>
+          <span class="pub-contrib"><em>My contribution:</em> Provided the underlying SPMHD implementation, helped generate the initial conditions, and contributed to the discussion and revision of the manuscript.</span>
+          <details class="abstract">
+            <summary>Abstract</summary>
+            <p>In this paper, we introduce the first implementation of magnetic field-aligned hyperbolic diffusion for standard smoothed particle (magneto-)hydrodynamics (SPH), and its linear-exact gradient extension (LESPH). Hyperbolic diffusion differs from traditional parabolic methods by incorporating the physical characteristic speed of diffusing particles and is computationally faster. This work extends it to encompass field-aligned diffusion, linear-exact gradients, and linear reconstruction to limit dissipation. Several standard test problems are presented: a diffusing slab, diffusion around a ring, a Gaussian pulse, and the magneto-thermal instability (MTI). The MTI only grows for for LESPH with reconstruction, and not for SPH. Both LESPH and SPH remain stable while fully aligning diffusion to magnetic fields. LESPH is more accurate and converges faster in the L1 error norm. SPH and LESPH both see improvements when using when also using linear reconstruction. These methods apply to other diffusive transport such as cosmic rays, viscosity, or magnetic resistivity.</p>
+          </details>
+        </li>
+        <li>
+          <span class="pub-title">The seven dwarfs illuminated: The impact of radiation on dwarf galaxies and their circumgalactic medium</span>
+          <span class="pub-authors">B. Baumschlager et al. (incl. <span class="me">R. Wissing</span>)</span>
+          <span class="pub-venue">A&amp;A 712, A99 (2026)</span>
+          <span class="pub-links"><a href="https://arxiv.org/abs/2508.19396">arXiv</a><a href="https://doi.org/10.1051/0004-6361/202556989">DOI</a></span>
+          <span class="pub-contrib"><em>My contribution:</em> Discussion and revision of the manuscript.</span>
+          <details class="abstract">
+            <summary>Abstract</summary>
+            <p>We present a high-resolution cosmological zoom-in simulation of a group of field dwarf galaxies that includes on-the-fly radiative transfer (RT) and is evolved to z = 0. Emission from stars is included according to age-dependent spectral energy distributions, and a redshift-dependent UV background is modelled by background particles and propagated through the simulation volume. The simulation also incorporates star formation, supernova (SN) feedback, a non-equilibrium primordial chemical network, and metal cooling and diffusion. We compare results from this simulation to previous simulations with the same initial conditions and largely similar galaxy formation physics, but without RT. The inclusion of RT results in the formation of eight additional faint dwarf galaxies with stellar masses of 10<sup>4</sup> M<sub>⊙</sub> to several 10<sup>5</sup> M<sub>⊙</sub> and only old stellar populations, similar to the observed ultra-faint dwarf galaxies. These eight faint dwarf galaxies formed before and during cosmic reionisation and were mostly quenched by z ~ 3─4 when reionisation was complete. The simulated galaxies follow many observed scaling relations such as the stellar mass-halo mass relation, the mass-size relation, and the luminosity-velocity dispersion relation. However, the simulation appears to underpredict the stellar iron abundances for the faintest population with L<sub>v</sub> &lt; 10<sup>6</sup>L<sub>⊙</sub>. For the more massive "classic" dwarf galaxies, radiative feedback suppresses star formation, making it less bursty and reducing explosive outflows. This consequently reduces the dark matter core sizes by a factor of two to three, rendering the core sizes (~1 kpc) more consistent with observations. The distribution of neutral hydrogen H I in the circumgalactic medium (CGM) is ubiquitous, with a covering fraction of unity within R<sub>vir</sub>, and in good agreement with observations. It is rather insensitive to radiative or SN feedback at z = 0, but at z &gt; 5, it is much higher in the RT simulation. In contrast, the distribution of low-ionisation species such as Si II is very compact and declines sharply beyond the interstellar medium (ISM) scale. C IV and O VI have a more extended distribution, but their column densities are generally below the detection limit. Radiative feedback leads to smaller column densities of the metal ions, partly due to the reduction of total metal production, and partly because hard photons from the stellar radiation escape the ISM and further ionise the CGM. The abundance of C IV is particularly sensitive to the latter effect.</p>
+          </details>
+        </li>
+        <li>
+          <span class="pub-title">The LISA Astrophysics "Disc-IMRI" Code Comparison Project: Intermediate-Mass-Ratio Binaries in AGN-Like Discs</span>
+          <span class="pub-authors">A. Derdzinski et al. (incl. <span class="me">R. Wissing</span>)</span>
+          <span class="pub-venue">Submitted to the Open Journal of Astrophysics (2025)</span>
+          <span class="pub-links"><a href="https://arxiv.org/abs/2512.10893">arXiv</a><a href="https://doi.org/10.48550/arXiv.2512.10893">DOI</a></span>
+          <span class="pub-contrib"><em>My contribution:</em> Implemented the physical viscosity prescription and locally isothermal equation of state in Gasoline2, ran the verification tests (Taylor–Green vortex and spreading disc), converted the initial conditions to tipsy format, and contributed to the discussion and revision of the manuscript.</span>
+          <details class="abstract">
+            <summary>Abstract</summary>
+            <p>Upcoming space-based gravitational wave detectors such as LISA, the Laser Interferometer Space Antenna, will be sensitive to extreme- and intermediate-mass-ratio inspirals (EMRIs and IMRIs). These binaries are comprised of a supermassive black hole and a stellar-mass object or intermediate-mass black hole. Their detection will probe the structure of galactic nuclei and enable tests of general relativity. As these events will be observed over thousands of orbital cycles, they will be extremely sensitive to both the underlying spacetime and astrophysical environment, demanding exquisite theoretical models on both fronts to avoid biased or even erroneous results. In particular, many (E/)IMRIs are expected to occur within accretion discs around supermassive black holes, and the nonlinearities present when modeling these systems require numerical simulations. In preparation for future modeling of LISA sources, we have conducted a comparison between eight different hydrodynamical codes and applied them to the problem of a q = 10^{-4} mass ratio binary interacting with an accretion disc. Thicker discs appear more lenient, and all codes at sufficiently high resolutions are in good agreement with each other and analytical predictions. For thinner discs, beyond the reach of analytical models, we find substantial disagreement between 2D and 3D simulations and between different codes, including both the magnitude and sign of the torque. With time and energy efficiency in mind, codes that leverage moving meshes or grid-based Lagrangian remapping seem preferable, as do codes that can leverage graphical processing units and other energy-efficient hardware.</p>
+          </details>
+        </li>
+        <li>
+          <span class="pub-title">In-Situ High Performance Visualization for Astronomy &amp; Cosmology</span>
+          <span class="pub-authors">N. Tuccari et al. (incl. <span class="me">R. Wissing</span>)</span>
+          <span class="pub-venue">ADASS XXXIV conference contribution (2025)</span>
+          <span class="pub-links"><a href="https://arxiv.org/abs/2510.24547">arXiv</a><a href="https://doi.org/10.48550/arXiv.2510.24547">DOI</a></span>
+          <span class="pub-contrib"><em>My contribution:</em> Responsible for the ChaNGa part of the SPACE CoE project; helped couple the in-situ visualisation pipeline to ChaNGa and provided simulation setups and test data.</span>
+          <details class="abstract">
+            <summary>Abstract</summary>
+            <p>The Astronomy &amp; Cosmology (A&amp;C) community is presently witnessing an unprecedented growth in the quality and quantity of data coming from simulations and observations. Writing results of numerical simulations to disk files has long been a bottleneck in high-performance computing. To access effectively and extract the scientific content of such large-scale data sets appropriate tools and techniques are needed. This is especially true for visualization tools, where petascale data size problems cannot be visualized without some data filtering, which reduces either the resolution or the amount of data volume managed by the visualization tool. A solution to this problem is to run the analysis and visualization concurrently (in-situ) with the simulation and bypass the storage of the full results. In particular we use Hecuba, a framework offering a highly distributed database to stream A\&amp;C simulation data for on-line visualization. We will demonstrate the Hecuba platform integration with the Changa high performant cosmological simulator and the in-situ visualization of its N-body results with the ParaView and VisIVO tools.</p>
+          </details>
+        </li>
+        <li>
+          <span class="pub-title">EuroHPC SPACE CoE: Redesigning Scalable Parallel Astrophysical Codes for Exascale</span>
+          <span class="pub-authors">N. Shukla et al. (incl. <span class="me">R. Wissing</span>)</span>
+          <span class="pub-venue">CF '25 Companion: Proceedings of the 22nd ACM International Conference on Computing Frontiers: Workshops and Special Sessions (2025)</span>
+          <span class="pub-links"><a href="https://arxiv.org/abs/2512.18883">arXiv</a><a href="https://doi.org/10.1145/3706594.3728892">DOI</a></span>
+          <span class="pub-contrib"><em>My contribution:</em> Responsible for the ChaNGa part of the SPACE CoE project.</span>
+          <details class="abstract">
+            <summary>Abstract</summary>
+            <p>High Performance Computing (HPC) based simulations are crucial in Astrophysics and Cosmology (A&amp;C), helping scientists investigate and understand complex astrophysical phenomena. Taking advantage of exascale computing capabilities is essential for these efforts. However, the unprecedented architectural complexity of exascale systems impacts legacy codes. The SPACE Centre of Excellence (CoE) aims to re-engineer key astrophysical codes to tackle new computational challenges by adopting innovative programming paradigms and software (SW) solutions. SPACE brings together scientists, code developers, HPC experts, hardware (HW) manufacturers, and SW developers. This collaboration enhances exascale A&amp;C applications, promoting the use of exascale and post-exascale computing capabilities. Additionally, SPACE addresses high-performance data analysis for the massive data outputs from exascale simulations and modern observations, using machine learning (ML) and visualisation tools. The project facilitates application deployment across platforms by focusing on code repositories and data sharing, integrating European astrophysical communities around exascale computing with standardised SW and data protocols.</p>
+          </details>
+        </li>
+        <li>
+          <span class="pub-title">High Performance Visualization for Astrophysics and Cosmology</span>
+          <span class="pub-authors">N. Tuccari et al. (incl. <span class="me">R. Wissing</span>)</span>
+          <span class="pub-venue">2025 33rd Euromicro International Conference on Parallel, Distributed, and Network-Based Processing (PDP) (2025)</span>
+          <span class="pub-links"><a href="https://doi.org/10.1109/PDP66500.2025.00069">DOI</a></span>
+          <span class="pub-contrib"><em>My contribution:</em> Provided ChaNGa simulation data and input on visualisation techniques for SPH data.</span>
+          <details class="abstract">
+            <summary>Abstract</summary>
+            <p>Modern Astrophysics and Cosmology (A&amp;C) projects produce immense data volumes, necessitating advanced software tools for data access, storage, and analysis. Visualization Interface for the Virtual Observatory (VisIVO) is one such tool enabling multi-dimensional data analysis and knowledge discovery across complex astrophysical datasets. Leveraging containerization and virtualization, VisIVO has been deployed on various distributed computing platforms. Additionally, Blender, an open-source 3D suite, provides robust tools for rendering and processing volumetric data, making it suitable for visualizing complex datasets. At the SPACE Center of Excellence these tools are being adapted for high-performance visualization of cosmological simulations performed with GADGET and ChaNGa on pre-exascale systems. However, implementing high-performance visualization on diverse HPC platforms presents several challenges, including hardware and software compatibility, data management, scalability, performance portability, and efficient resource allocation. This paper outlines strategies to integrate VisIVO with workflow frameworks and streaming platforms to address these challenges. Workflow frameworks enhance portability, scheduling, and reproducibility of visualization workflows on pre-exascale systems used in A&amp;C simulations. We also discuss the use of streaming platforms to enable concurrent (i.e. in-situ) analysis and visualization of simulations, reducing the need to store full simulation data by leveraging distributed databases that stream the output data in real time. Lastly, we present an adaptation of Blender to handle large-scale particle-based astrophysical data, offering high-quality visualization with interactive exploration capabilities.</p>
+          </details>
+        </li>
+        <li>
+          <span class="pub-title">Axisymmetric smoothed particle magnetohydrodynamics</span>
+          <span class="pub-authors">D. García-Senz, <span class="me">R. Wissing</span>, R. M. Cabezón, E. Vurgun, M. Linares</span>
+          <span class="pub-venue">MNRAS 518, 4115–4131 (2023)</span>
+          <span class="pub-links"><a href="https://arxiv.org/abs/2211.06399">arXiv</a><a href="https://doi.org/10.1093/mnras/stac3328">DOI</a></span>
+          <span class="pub-contrib"><em>My contribution:</em> Performed the reference SPMHD simulations with Gasoline2 that the axisymmetric implementation was compared against, provided test problems, produced several of the figures, and contributed to revising the manuscript.</span>
+          <details class="abstract">
+            <summary>Abstract</summary>
+            <p>Many astrophysical and terrestrial scenarios involving magnetic fields can be approached in axial geometry. Although the smoothed particle hydrodynamics (SPH) technique has been successfully extended to magnetohydrodynamics (MHD), a well-verified, axisymmetric MHD scheme based on such technique does not exist yet. In this work, we fill that gap in the scientific literature and propose and check a novel axisymmetric MHD hydrodynamic code, that can be applied to physical problems which display the adequate geometry. We show that the hydrodynamic code built following these axisymmetric hypothesis is able to produce similar results than standard 3D-SPMHD codes with equivalent resolution but with much lesser computational load.</p>
+          </details>
+        </li>
+        <li>
+          <span class="pub-title">Axisymmetric magneto-hydrodynamics with SPH</span>
+          <span class="pub-authors">D. García-Senz, <span class="me">R. Wissing</span>, R. M. Cabezón</span>
+          <span class="pub-venue">Preprint (2022)</span>
+          <span class="pub-links"><a href="https://arxiv.org/abs/2206.05324">arXiv</a><a href="https://doi.org/10.48550/arXiv.2206.05324">DOI</a></span>
+          <details class="abstract">
+            <summary>Abstract</summary>
+            <p>Many interesting terrestrial and astrophysical scenarios involving magnetic fields can be approached in axial geometry. Even though the Lagrangian smoothed particle hydrodynamics (SPH) technique has been successfully extended to handle magneto-hydrodynamic (MHD) problems, a well-verified, axisymmetric MHD scheme based on the SPH technique does not exist. In this work, we propose and check a new axisymmetric MHD hydrodynamic code that can be applied to astrophysical and engineering problems which display an adequate geometry. We show that a hydrodynamic code built on these axisymmetric premises is able to produce similar results to standard 3D-SPHMHD codes but with much lesser computational effort.</p>
+          </details>
+        </li>
+      </ul>
+
+      <!-- PUBLICATIONS:END -->
+
+      <h3>Theses</h3>
+      <ul class="pub-list">
+        <li>
+          <span class="pub-title">Simulating galactic dynamo processes with smoothed particle magnetohydrodynamics</span>
+          <span class="pub-venue">PhD thesis, University of Oslo (2022)</span>
+          <span class="pub-links"><a href="https://www.duo.uio.no/handle/10852/102667">DUO</a></span>
+        </li>
+        <li>
+          <span class="pub-title">Simulations of the lunar-forming impact using a new equation of state</span>
+          <span class="pub-venue">MSc thesis, Lund University (2017)</span>
+          <span class="pub-links"><a href="https://lup.lub.lu.se/student-papers/search/publication/8921891">LUP</a></span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="slides" class="wrap section">
+      <h2 class="section-title">Slides &amp; tutorials</h2>
+      <p class="lead muted">Slides and tutorial material from talks, lectures and schools.</p>
+
+      <!--
+        To add slides: put the PDF in assets/slides/ (e.g. assets/slides/agora-2025.pdf),
+        point the "Slides (PDF)" link at it, and optionally replace the preview box with
+        <img class="slide-thumb" src="assets/slides/agora-2025.jpg" alt="Title slide">.
+        Copy a whole <article class="slide-card"> block to add another talk.
+      -->
+      <div class="slide-grid">
+        <article class="slide-card">
+          <a href="assets/slides/agora-2025.pdf" target="_blank" rel="noopener"><img class="slide-thumb" src="assets/slides/agora-2025.jpg" alt="Title slide: Recent improvements in SPMHD modelling of galaxies" loading="lazy"></a>
+          <p class="slide-meta">2025 · Talk</p>
+          <h4>Recent improvements in SPMHD modelling of galaxies</h4>
+          <p class="talk-venue">International Workshop on Galaxy Formation + AGORA in Asia</p>
+          <p class="pub-links"><a href="assets/slides/agora-2025.pdf" target="_blank" rel="noopener">Slides (PDF)</a></p>
+        </article>
+        <article class="slide-card">
+          <a href="assets/slides/nbody-shop-2025.pdf" target="_blank" rel="noopener"><img class="slide-thumb" src="assets/slides/nbody-shop-2025.jpg" alt="Title slide: Improving convergence in SPH" loading="lazy"></a>
+          <p class="slide-meta">2025 · Talk</p>
+          <h4>Improving convergence in SPH</h4>
+          <p class="talk-venue">N-Body Shop Excellence Conference</p>
+          <p class="pub-links"><a href="assets/slides/nbody-shop-2025.pdf" target="_blank" rel="noopener">Slides (PDF)</a></p>
+        </article>
+        <article class="slide-card">
+          <a href="assets/slides/changa-tutorial.pdf" target="_blank" rel="noopener"><img class="slide-thumb" src="assets/slides/changa-tutorial.jpg" alt="First page of the ChaNGa tutorial" loading="lazy"></a>
+          <p class="slide-meta">2025 · Tutorial</p>
+          <h4>ChaNGa tutorial</h4>
+          <p class="talk-venue">SPACE Winter School, Sesto Pusteria</p>
+          <p class="pub-links"><a href="assets/slides/changa-tutorial.pdf" target="_blank" rel="noopener">Tutorial (PDF)</a></p>
+        </article>
+        <article class="slide-card">
+          <a href="assets/slides/uio-colloquium-2024.pdf" target="_blank" rel="noopener"><img class="slide-thumb" src="assets/slides/uio-colloquium-2024.jpg" alt="Title slide: ChaNGa: computational challenges for cosmological codes" loading="lazy"></a>
+          <p class="slide-meta">2024 · Colloquium</p>
+          <h4>ChaNGa: computational challenges for cosmological codes</h4>
+          <p class="talk-venue">UiO Colloquium, Oslo</p>
+          <p class="pub-links"><a href="assets/slides/uio-colloquium-2024.pdf" target="_blank" rel="noopener">Slides (PDF)</a></p>
+        </article>
+        <article class="slide-card">
+          <a href="https://www.youtube.com/watch?v=ZHgPzhLsoMI" target="_blank" rel="noopener"><img class="slide-thumb" src="https://i.ytimg.com/vi/ZHgPzhLsoMI/hqdefault.jpg" alt="Video thumbnail: online training on the ChaNGa code" loading="lazy"></a>
+          <p class="slide-meta">2024 · Online training</p>
+          <h4>The ChaNGa code and the Charm++ framework</h4>
+          <p class="talk-venue">SPACE CoE online training, July 2024</p>
+          <p class="pub-links"><a href="https://www.youtube.com/watch?v=ZHgPzhLsoMI" target="_blank" rel="noopener">Video (YouTube)</a><a href="https://www.space-coe.eu/training/training-20240702.php" target="_blank" rel="noopener">Event page</a></p>
+        </article>
+        <article class="slide-card">
+          <a href="assets/slides/birkeland-prize-2023.pdf" target="_blank" rel="noopener"><img class="slide-thumb" src="assets/slides/birkeland-prize-2023.jpg" alt="Title slide: Simulating galactic dynamo processes with smoothed particle magnetohydrodynamics" loading="lazy"></a>
+          <p class="slide-meta">2023 · Invited talk</p>
+          <h4>Simulating galactic dynamo processes with smoothed particle magnetohydrodynamics</h4>
+          <p class="talk-venue">Birkeland Prize lecture, Oslo</p>
+          <p class="pub-links"><a href="assets/slides/birkeland-prize-2023.pdf" target="_blank" rel="noopener">Slides (PDF)</a><a href="https://www.youtube.com/watch?v=8ABjEsUeh38" target="_blank" rel="noopener">Video (YouTube)</a></p>
+        </article>
+        <article class="slide-card">
+          <a href="assets/slides/giant-impacts-trial-lecture-2022.pdf" target="_blank" rel="noopener"><img class="slide-thumb" src="assets/slides/giant-impacts-trial-lecture-2022.jpg" alt="Title slide: The role of magnetic fields during giant impacts in the solar system" loading="lazy"></a>
+          <p class="slide-meta">2022 · Trial lecture</p>
+          <h4>The role of magnetic fields during giant impacts in the solar system</h4>
+          <p class="talk-venue">PhD trial lecture, University of Oslo</p>
+          <p class="pub-links"><a href="assets/slides/giant-impacts-trial-lecture-2022.pdf" target="_blank" rel="noopener">Slides (PDF)</a></p>
+        </article>
+        <article class="slide-card">
+          <a href="assets/slides/phd-defence-2022.pdf" target="_blank" rel="noopener"><img class="slide-thumb" src="assets/slides/phd-defence-2022.jpg" alt="Title slide: Simulating galactic dynamo processes with smoothed particle magnetohydrodynamics" loading="lazy"></a>
+          <p class="slide-meta">2022 · PhD defence</p>
+          <h4>Simulating galactic dynamo processes with smoothed particle magnetohydrodynamics</h4>
+          <p class="talk-venue">PhD thesis talk, University of Oslo</p>
+          <p class="pub-links"><a href="assets/slides/phd-defence-2022.pdf" target="_blank" rel="noopener">Slides (PDF)</a></p>
+        </article>
+        <article class="slide-card">
+          <a href="assets/slides/gdsph-zurich-2019.pdf" target="_blank" rel="noopener"><img class="slide-thumb" src="assets/slides/gdsph-zurich-2019.jpg" alt="Title slide: SPMHD with the geometric density force gradient operator (GDSPH)" loading="lazy"></a>
+          <p class="slide-meta">2019 · Invited talk</p>
+          <h4>SPMHD with the geometric density force gradient operator (GDSPH)</h4>
+          <p class="talk-venue">Invited talk, Zurich</p>
+          <p class="pub-links"><a href="assets/slides/gdsph-zurich-2019.pdf" target="_blank" rel="noopener">Slides (PDF)</a></p>
+        </article>
+        <article class="slide-card">
+          <a href="assets/slides/numerical-hydro-lecture.pdf" target="_blank" rel="noopener"><img class="slide-thumb" src="assets/slides/numerical-hydro-lecture.jpg" alt="Title slide: A taste of numerical hydrodynamics" loading="lazy"></a>
+          <p class="slide-meta">2017 – 2021 · Lecture</p>
+          <h4>A taste of numerical hydrodynamics</h4>
+          <p class="talk-venue">Guest lecture, AST4320 Cosmology and Extragalactic Astronomy, University of Oslo</p>
+          <p class="pub-links"><a href="assets/slides/numerical-hydro-lecture.pdf" target="_blank" rel="noopener">Slides (PDF)</a></p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">&copy; 2026 Robert Wissing</div>
+  </footer>
+  <script>
+    // Highlight the menu item for the section currently in view
+    const links = document.querySelectorAll('.site-nav a');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        links.forEach(a => a.toggleAttribute('aria-current', a.getAttribute('href') === '#' + e.target.id));
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    document.querySelectorAll('main section[id]').forEach(s => observer.observe(s));
+  </script>
+</body>
+</html>

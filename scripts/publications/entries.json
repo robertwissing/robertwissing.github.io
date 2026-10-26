@@ -1,0 +1,396 @@
+{
+  "orcid": "0000-0001-7039-4592",
+  "me": "Wissing",
+  "include_bibcodes": [],
+  "exclude_doctypes": [
+    "abstract",
+    "phdthesis",
+    "mastersthesis",
+    "poster",
+    "talk",
+    "catalog",
+    "software",
+    "misc",
+    "erratum"
+  ],
+  "entries": [
+    {
+      "match": {
+        "title": "Improved volume partition for smoothed particle hydrodynamics"
+      },
+      "fallback": {
+        "title": "Improved volume partition for smoothed particle hydrodynamics",
+        "authors_html": "<span class=\"me\">R. Wissing</span>, J. Wadsley",
+        "venue": "Submitted to A&A",
+        "year": 2026,
+        "first_author": true,
+        "links": []
+      },
+      "override": {
+        "venue": "Submitted to A&A"
+      }
+    },
+    {
+      "match": {
+        "arxiv": "2508.08471",
+        "doi": "10.1051/0004-6361/202556909",
+        "title": "Optimized smoothing kernels for smoothed particle hydrodynamics"
+      },
+      "fallback": {
+        "title": "Optimized smoothing kernels for smoothed particle hydrodynamics",
+        "authors_html": "<span class=\"me\">R. Wissing</span>, T. Quinn, B. Keller, J. Wadsley, S. Shen",
+        "venue": "A&A 706, A73 (2026)",
+        "year": 2026,
+        "first_author": true,
+        "links": [
+          {
+            "label": "arXiv",
+            "url": "https://arxiv.org/abs/2508.08471"
+          },
+          {
+            "label": "DOI",
+            "url": "https://doi.org/10.1051/0004-6361/202556909"
+          },
+          {
+            "label": "Code",
+            "url": "https://github.com/robertwissing/testsuite"
+          }
+        ]
+      },
+      "override": {
+        "extra_links": [
+          {
+            "label": "Code",
+            "url": "https://github.com/robertwissing/testsuite"
+          }
+        ]
+      }
+    },
+    {
+      "match": {
+        "arxiv": "2208.07889",
+        "doi": "10.1051/0004-6361/202244753",
+        "title": "Numerical dependencies of the galactic dynamo in isolated galaxies with SPH"
+      },
+      "fallback": {
+        "title": "Numerical dependencies of the galactic dynamo in isolated galaxies with SPH",
+        "authors_html": "<span class=\"me\">R. Wissing</span>, S. Shen",
+        "venue": "A&A 673, A47 (2023)",
+        "year": 2023,
+        "first_author": true,
+        "links": [
+          {
+            "label": "arXiv",
+            "url": "https://arxiv.org/abs/2208.07889"
+          },
+          {
+            "label": "DOI",
+            "url": "https://doi.org/10.1051/0004-6361/202244753"
+          }
+        ]
+      },
+      "override": {}
+    },
+    {
+      "match": {
+        "arxiv": "2105.01091",
+        "doi": "10.1051/0004-6361/202141206",
+        "title": "Magnetorotational instability with smoothed particle hydrodynamics"
+      },
+      "fallback": {
+        "title": "Magnetorotational instability with smoothed particle hydrodynamics",
+        "authors_html": "<span class=\"me\">R. Wissing</span>, S. Shen, J. Wadsley, T. Quinn",
+        "venue": "A&A 659, A91 (2022)",
+        "year": 2022,
+        "first_author": true,
+        "links": [
+          {
+            "label": "arXiv",
+            "url": "https://arxiv.org/abs/2105.01091"
+          },
+          {
+            "label": "DOI",
+            "url": "https://doi.org/10.1051/0004-6361/202141206"
+          }
+        ]
+      },
+      "override": {}
+    },
+    {
+      "match": {
+        "doi": "10.1051/0004-6361/201936227",
+        "title": "A new equation of state applied to planetary impacts. II. Lunar-forming impact simulations with a primordial magma ocean"
+      },
+      "fallback": {
+        "title": "A new equation of state applied to planetary impacts. II. Lunar-forming impact simulations with a primordial magma ocean",
+        "authors_html": "<span class=\"me\">R. Wissing</span>, D. Hobbs",
+        "venue": "A&A 643, A40 (2020)",
+        "year": 2020,
+        "first_author": true,
+        "links": [
+          {
+            "label": "DOI",
+            "url": "https://doi.org/10.1051/0004-6361/201936227"
+          },
+          {
+            "label": "ADS",
+            "url": "https://ui.adsabs.harvard.edu/abs/2020A&A...643A..40W"
+          }
+        ],
+        "abstract_html": "Observed FeO/MgO ratios in the Moon and Earth are inconsistent with simulations done with a single homogeneous silicate layer. In this paper we use a newly developed equation of state to perform smoothed particle hydrodynamics simulations on the lunar-forming impact, testing the effect of a primordial magma ocean on Earth. This is investigated using the impact parameters of both the canonical case, in which a Mars-sized impactor hits a non-rotating Earth at an oblate angle, and the fast-rotating case, in which a half-sized Mars impactor hits a fast-spinning Earth head-on. We find that the inclusion of a magma ocean results in a less massive Moon and leads to slightly more mixing. Additionally, we test how an icy Theia would affect the results and find that this reduces the probability of a successful Moon formation. Simulations of the fast-spinning case are found to be unable to form a massive-enough Moon."
+      },
+      "override": {}
+    },
+    {
+      "match": {
+        "arxiv": "1909.09650",
+        "doi": "10.1051/0004-6361/201936739",
+        "title": "Smoothed particle magnetohydrodynamics with the geometric density average force expression"
+      },
+      "fallback": {
+        "title": "Smoothed particle magnetohydrodynamics with the geometric density average force expression",
+        "authors_html": "<span class=\"me\">R. Wissing</span>, S. Shen",
+        "venue": "A&A 638, A140 (2020)",
+        "year": 2020,
+        "first_author": true,
+        "links": [
+          {
+            "label": "arXiv",
+            "url": "https://arxiv.org/abs/1909.09650"
+          },
+          {
+            "label": "DOI",
+            "url": "https://doi.org/10.1051/0004-6361/201936739"
+          }
+        ]
+      },
+      "override": {}
+    },
+    {
+      "match": {
+        "doi": "10.1051/0004-6361/201935814",
+        "title": "A new equation of state applied to planetary impacts. I. Models of planetary interiors"
+      },
+      "fallback": {
+        "title": "A new equation of state applied to planetary impacts. I. Models of planetary interiors",
+        "authors_html": "<span class=\"me\">R. Wissing</span>, D. Hobbs",
+        "venue": "A&A 635, A21 (2020)",
+        "year": 2020,
+        "first_author": true,
+        "links": [
+          {
+            "label": "DOI",
+            "url": "https://doi.org/10.1051/0004-6361/201935814"
+          },
+          {
+            "label": "Code",
+            "url": "https://github.com/robertwissing/EOS"
+          }
+        ],
+        "abstract_html": "We present a new analytical equation of state (EOS), which correctly models high pressure theory and fits well to the experimental data of ε-Fe, SiO<sub>2</sub>, Mg<sub>2</sub>SiO<sub>4</sub>, and the Earth. The cold part of the EOS is modeled after the Varpoly EOS. The thermal part is based on a new formalism of the Grüneisen parameter, which improves behavior from earlier models and bridges the gap between elasticity and thermoelasticity. The EOS includes an expanded state model, which allows for the accurate modeling of material vapor curves. The EOS is compared to both the Tillotson EOS and ANEOS model, which are both widely used in planetary impact simulations. The complexity and cost of the EOS is similar to that of the Tillotson EOS, while showing improved behavior in every aspect. The Hugoniot state of shocked silicate material is captured relatively well and our model reproduces vapor curves similar to that of the ANEOS model. To test its viability in hydrodynamical simulations, the EOS was applied to the lunar-forming impact scenario and the results are presented in Paper II and show good agreement with previous work."
+      },
+      "override": {
+        "extra_links": [
+          {
+            "label": "Code",
+            "url": "https://github.com/robertwissing/EOS"
+          }
+        ]
+      }
+    },
+    {
+      "match": {
+        "arxiv": "2610.03346",
+        "title": "A multi-scale view of molecular gas and magnetic fields in the Antennae galaxies"
+      },
+      "fallback": {
+        "title": "A multi-scale view of molecular gas and magnetic fields in the Antennae galaxies",
+        "authors_html": "A. Lasrado et al. (incl. <span class=\"me\">R. Wissing</span>)",
+        "venue": "Submitted to A&A (2026)",
+        "year": 2026,
+        "first_author": false,
+        "links": [
+          {
+            "label": "arXiv",
+            "url": "https://arxiv.org/abs/2610.03346"
+          }
+        ]
+      },
+      "override": {
+        "contribution": "Discussion and revision of the manuscript.",
+        "venue": "Submitted to A&A (2026)"
+      }
+    },
+    {
+      "match": {
+        "arxiv": "2604.21983",
+        "title": "Fast, stable, and physical: hyperbolic, magnetic field-aligned diffusion in SPH"
+      },
+      "fallback": {
+        "title": "Fast, stable, and physical: hyperbolic, magnetic field-aligned diffusion in SPH",
+        "authors_html": "N. Owens, J. Wadsley, <span class=\"me\">R. Wissing</span>, B. Keller",
+        "venue": "Preprint (2026)",
+        "year": 2026,
+        "first_author": false,
+        "links": [
+          {
+            "label": "arXiv",
+            "url": "https://arxiv.org/abs/2604.21983"
+          }
+        ]
+      },
+      "override": {
+        "contribution": "Provided the underlying SPMHD implementation, helped generate the initial conditions, and contributed to the discussion and revision of the manuscript."
+      }
+    },
+    {
+      "match": {
+        "arxiv": "2508.19396",
+        "doi": "10.1051/0004-6361/202556989",
+        "title": "The Seven Dwarfs illuminated: the impact of radiation on dwarf galaxies and their circumgalactic medium"
+      },
+      "fallback": {
+        "title": "The Seven Dwarfs illuminated: the impact of radiation on dwarf galaxies and their circumgalactic medium",
+        "authors_html": "B. Baumschlager et al. (incl. <span class=\"me\">R. Wissing</span>)",
+        "venue": "A&A 712, A99 (2026)",
+        "year": 2026,
+        "first_author": false,
+        "links": [
+          {
+            "label": "arXiv",
+            "url": "https://arxiv.org/abs/2508.19396"
+          },
+          {
+            "label": "DOI",
+            "url": "https://doi.org/10.1051/0004-6361/202556989"
+          }
+        ]
+      },
+      "override": {
+        "contribution": "Discussion and revision of the manuscript."
+      }
+    },
+    {
+      "match": {
+        "arxiv": "2512.10893",
+        "title": "The LISA Astrophysics “Disc-IMRI” code comparison project: intermediate-mass-ratio binaries in AGN-like discs"
+      },
+      "fallback": {
+        "title": "The LISA Astrophysics “Disc-IMRI” code comparison project: intermediate-mass-ratio binaries in AGN-like discs",
+        "authors_html": "A. Derdzinski et al. (incl. <span class=\"me\">R. Wissing</span>)",
+        "venue": "Submitted to the Open Journal of Astrophysics (2025)",
+        "year": 2025,
+        "first_author": false,
+        "links": [
+          {
+            "label": "arXiv",
+            "url": "https://arxiv.org/abs/2512.10893"
+          }
+        ]
+      },
+      "override": {
+        "contribution": "Implemented the physical viscosity prescription and locally isothermal equation of state in Gasoline2, ran the verification tests (Taylor–Green vortex and spreading disc), converted the initial conditions to tipsy format, and contributed to the discussion and revision of the manuscript.",
+        "venue": "Submitted to the Open Journal of Astrophysics (2025)"
+      }
+    },
+    {
+      "match": {
+        "arxiv": "2510.24547",
+        "title": "In-situ high performance visualization for astronomy & cosmology"
+      },
+      "fallback": {
+        "title": "In-situ high performance visualization for astronomy & cosmology",
+        "authors_html": "N. Tuccari et al. (incl. <span class=\"me\">R. Wissing</span>)",
+        "venue": "ADASS XXXIV conference contribution (2025)",
+        "year": 2025,
+        "first_author": false,
+        "links": [
+          {
+            "label": "arXiv",
+            "url": "https://arxiv.org/abs/2510.24547"
+          }
+        ]
+      },
+      "override": {
+        "contribution": "Responsible for the ChaNGa part of the SPACE CoE project; helped couple the in-situ visualisation pipeline to ChaNGa and provided simulation setups and test data.",
+        "venue": "ADASS XXXIV conference contribution (2025)"
+      }
+    },
+    {
+      "match": {
+        "arxiv": "2512.18883",
+        "doi": "10.1145/3706594.3728892",
+        "title": "EuroHPC SPACE CoE: redesigning scalable parallel astrophysical codes for exascale"
+      },
+      "fallback": {
+        "title": "EuroHPC SPACE CoE: redesigning scalable parallel astrophysical codes for exascale",
+        "authors_html": "N. Shukla et al. (incl. <span class=\"me\">R. Wissing</span>)",
+        "venue": "Proc. CF ’25 Companion, 177–184 (2025)",
+        "year": 2025,
+        "first_author": false,
+        "links": [
+          {
+            "label": "arXiv",
+            "url": "https://arxiv.org/abs/2512.18883"
+          },
+          {
+            "label": "DOI",
+            "url": "https://doi.org/10.1145/3706594.3728892"
+          }
+        ]
+      },
+      "override": {
+        "contribution": "Responsible for the ChaNGa part of the SPACE CoE project."
+      }
+    },
+    {
+      "match": {
+        "doi": "10.1109/PDP66500.2025.00069",
+        "title": "High performance visualization for astrophysics and cosmology"
+      },
+      "fallback": {
+        "title": "High performance visualization for astrophysics and cosmology",
+        "authors_html": "N. Tuccari et al. (incl. <span class=\"me\">R. Wissing</span>)",
+        "venue": "Proc. 33rd Euromicro PDP, 443–450 (2025)",
+        "year": 2025,
+        "first_author": false,
+        "links": [
+          {
+            "label": "DOI",
+            "url": "https://doi.org/10.1109/PDP66500.2025.00069"
+          }
+        ]
+      },
+      "override": {
+        "contribution": "Provided ChaNGa simulation data and input on visualisation techniques for SPH data."
+      }
+    },
+    {
+      "match": {
+        "arxiv": "2211.06399",
+        "doi": "10.1093/mnras/stac3328",
+        "title": "Axisymmetric smoothed particle magnetohydrodynamics"
+      },
+      "fallback": {
+        "title": "Axisymmetric smoothed particle magnetohydrodynamics",
+        "authors_html": "D. García-Senz, <span class=\"me\">R. Wissing</span>, R. M. Cabezón, E. Vurgun, M. Linares",
+        "venue": "MNRAS 518, 4115–4131 (2023)",
+        "year": 2023,
+        "first_author": false,
+        "links": [
+          {
+            "label": "arXiv",
+            "url": "https://arxiv.org/abs/2211.06399"
+          },
+          {
+            "label": "DOI",
+            "url": "https://doi.org/10.1093/mnras/stac3328"
+          }
+        ]
+      },
+      "override": {
+        "contribution": "Performed the reference SPMHD simulations with Gasoline2 that the axisymmetric implementation was compared against, provided test problems, produced several of the figures, and contributed to revising the manuscript."
+      }
+    }
+  ]
+}
