@@ -11,6 +11,21 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+  <section class="hero" aria-label="Introduction">
+    <div class="hero-figure">
+      <img src="assets/img/hero-outflow.webp" alt="Simulated disc galaxy seen at an angle, with magnetised outflows rising above and below the disc">
+    </div>
+    <div class="hero-text">
+      <p class="hero-name">Robert Wissing</p>
+      <p class="hero-role">Computational astrophysicist, University of Oslo</p>
+    </div>
+    <a class="hero-scroll" href="#about" aria-label="Scroll to About">
+      <span>Scroll</span>
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </section>
+
+  <div class="page">
   <header class="site-header">
     <div class="wrap">
       <a class="site-title" href="#about">Robert Wissing</a>
@@ -798,6 +813,26 @@
   <footer class="site-footer">
     <div class="wrap">&copy; 2026 Robert Wissing</div>
   </footer>
+  </div>
+
+  <script>
+    // Hero: zoom and fade the outflow figure as the page scrolls over it
+    const hero = document.querySelector('.hero');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let ticking = false;
+    function updateHero() {
+      const p = Math.min(Math.max(window.scrollY / hero.offsetHeight, 0), 1);
+      hero.style.setProperty('--p', p.toFixed(3));
+      hero.style.visibility = p >= 1 ? 'hidden' : '';
+      ticking = false;
+    }
+    if (!reduceMotion) {
+      window.addEventListener('scroll', () => {
+        if (!ticking) { requestAnimationFrame(updateHero); ticking = true; }
+      }, { passive: true });
+      updateHero();
+    }
+  </script>
   <script>
     // Highlight the menu item for the section currently in view
     const links = document.querySelectorAll('.site-nav a');
