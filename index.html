@@ -818,7 +818,10 @@
   <script>
     // Hero: zoom and fade the outflow figure as the page scrolls over it
     const hero = document.querySelector('.hero');
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // Fallback for browsers without CSS scroll-driven animations, only with a mouse or trackpad
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      || CSS.supports('animation-timeline: scroll()')
+      || !window.matchMedia('(pointer: fine)').matches;
     let ticking = false;
     function updateHero() {
       const p = Math.min(Math.max(window.scrollY / hero.offsetHeight, 0), 1);

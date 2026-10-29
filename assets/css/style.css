@@ -566,6 +566,38 @@ img.slide-thumb { display: block; border: 1px solid var(--rule); object-position
   .hero-text { bottom: 18svh; }
 }
 
+/* Where supported, the browser drives the scroll effect itself (smooth on phones) */
+@supports (animation-timeline: scroll()) {
+  .hero-figure, .hero-text, .hero-scroll {
+    animation-timeline: scroll(root block);
+    animation-range: 0 100vh;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+  }
+  .hero-figure { animation-name: hero-figure-out; }
+  .hero-text   { animation-name: hero-text-out; }
+  .hero-scroll { animation-name: hero-scroll-out; }
+}
+
+@keyframes hero-figure-out {
+  from { transform: translate(-50%, -54%) scale(1); opacity: 1; }
+  to   { transform: translate(-50%, -64%) scale(1.15); opacity: 0.3; }
+}
+@keyframes hero-text-out {
+  from { transform: translateY(0); opacity: 1; }
+  45%, to { transform: translateY(-27px); opacity: 0; }
+}
+@keyframes hero-scroll-out {
+  from { opacity: 1; }
+  20%, to { opacity: 0; }
+}
+
+/* No slow rotation on touch screens, to keep scrolling light */
+@media (pointer: coarse) {
+  .hero-figure img { animation: none; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-figure img, .hero-scroll svg { animation: none; }
+  .hero-figure, .hero-text, .hero-scroll { animation: none; }
 }
